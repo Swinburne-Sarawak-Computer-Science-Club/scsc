@@ -32,7 +32,7 @@ const credits = () => {
                 <p>Our thanks to SCSC’s committees and friends in industry and beyond, including:</p>
 
               <ul>
-                    <li data-marker="*"><a href="https://hovahyii.github.io/hovah.io/">Hovah Yii</a>, created and sponsored the SCSC website</li>
+                    <li data-marker="*"><a href="https://github.com/hovahyii">Hovah Yii</a>, created and sponsored the SCSC website</li>
                     <li data-marker="*"><a href="https://github.com/Laikokwui">Lai Kok Wei</a>, maintained and updated the SCSC website</li>
                     <li data-marker="*"><a href="https://www.facebook.com/aylwinsim.chunwei">Alywin Sim</a>, contributed idea for the SCSC website</li>
                     <li data-marker="*"><a href="https://www.facebook.com/markloveuguysnJesus">Mark Goh</a>, helped with the SCSC website</li>

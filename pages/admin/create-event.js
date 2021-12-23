@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
 import { Button, Form, Loader } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
-import styles from '../../styles/admin.module.css'
 import Navbar from './components/Navbar'
+import Js from "../../components/Js"
+
+import Head from "next/head"
 
 const NewEvent = () => {
     const [form, setForm] = useState({ title: '',  date: '', time: '', venue: '', description: '', link: '' });
@@ -81,11 +83,27 @@ const NewEvent = () => {
     }
 
     return (
-        <div className={styles.container}>
-        <Navbar />
-          
-            <div className={styles.mainContent}>
-            <h1>Event Details:</h1>
+        <body>
+				<Head>
+					<title>Admin Dashboard | Create Event</title>
+					<meta
+						name="description"
+						content="SCSC was founded in April 2018 by Aylwin Sim and Hovah Yii. The club later was passed to Dr. Mark Tee Kit Tsun by the end of 2018. Since then, SCSC has been collaborating with IEEE, Robotics clubs to organise activities..."
+					/>
+					<meta
+						name="keywords"
+						content="SCSC, About SCSC, Swinburne Computer Science Club, SCSC Sarawak, Swinburne CompSci Club, History, what we provide, we provide you"
+					/>
+					<meta name="author" content="Hovah Yii" />
+				</Head>
+
+				<Js />
+
+				<div className="container-fluid">
+					<div className="row">
+						<Navbar />
+						<main className="col-md markdown-body">
+						     <h1>Event Details:</h1>
 
             <h2>Create Event</h2>
             <div>
@@ -94,6 +112,7 @@ const NewEvent = () => {
                         ? <Loader active inline='centered' />
                         : <Form onSubmit={handleSubmit}>
                             <Form.Input
+                           
                                 fluid
                                 error={errors.title ? { content: 'Please enter a title', pointing: 'below' } : null}
                                 label='Title'
@@ -145,8 +164,11 @@ const NewEvent = () => {
                         </Form>
                 }
             </div>
-        </div>
-    </div>
+						</main>
+					</div>
+				</div>
+			</body>
+  
     )
 }
 

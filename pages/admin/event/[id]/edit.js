@@ -81,11 +81,14 @@ const EditEvent = ({ event }) => {
     }
 
     return (
-        <div className={styles.container}>
-        <Navbar />
-          
-            <div className={styles.mainContent}>
-            <h1>Event Details:</h1>
+          <body>
+			
+
+				<div className="container-fluid">
+					<div className="row">
+						<Navbar />
+						<main className="col-md markdown-body">
+		 <h1>Event Details:</h1>
 
             <h2>Create Event</h2>
             <div>
@@ -151,8 +154,11 @@ const EditEvent = ({ event }) => {
                         </Form>
                 }
             </div>
-        </div>
-    </div>
+						</main>
+					</div>
+				</div>
+			</body>
+      
     )
 }
 

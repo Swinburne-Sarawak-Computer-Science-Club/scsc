@@ -3,5 +3,6 @@ module.exports = {
       loader: 'imgix',
       path: 'https://www.swinburne.edu.my/',
     },
+
   }
   

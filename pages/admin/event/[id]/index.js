@@ -2,8 +2,8 @@ import fetch from 'isomorphic-unfetch';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Button, Loader } from 'semantic-ui-react';
-import Navbar from '../../components/Navbar'
-import styles from '../../../../styles/admin.module.css'
+import Navbar from './../../components/Navbar'
+
 
 const Event = ({ event }) => {
     const [isDeleting, setIsDeleting] = useState(false);
@@ -36,15 +36,18 @@ const Event = ({ event }) => {
     }
 
     return (
-        <div className={styles.container}>
-             <Navbar />
-          
-            <div className={styles.noteContainer}>
-            <h1>Event Details:</h1>
+          <body>
+			
+
+				<div className="container-fluid">
+					<div className="row">
+						<Navbar />
+						<main className="col-md markdown-body">
+		  <h1>Event Details:</h1>
             {isDeleting
                 ? <Loader active /> :
                 <>
-                    <h1>{event.title}</h1>
+                    <h3>{event.title}</h3>
                     <p>{event.date}</p>
                     <p>{event.time}</p>
                     <p>{event.venue}</p>
@@ -53,9 +56,11 @@ const Event = ({ event }) => {
                     <Button color='red' onClick={handleDelete}>Delete</Button>
                 </>
             }
-        
-             </div>
-        </div>
+						</main>
+					</div>
+				</div>
+			</body>
+       
          
     )
 }

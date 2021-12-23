@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
 import { Button, Form, Loader } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
-import styles from '../../../../styles/admin.module.css'
 import Navbar from '../../components/Navbar'
 
 const EditEvent = ({ event }) => {

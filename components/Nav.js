@@ -117,7 +117,7 @@ const Nav = () => {
 
 				{session ? (
 					<p>
-						<a href="/admin/welcome-to-dashboard">Dashbord</a>
+						<a href="/admin/welcome-to-dashboard">Dashboard</a>
 					</p>
 				) : (
 					<p>

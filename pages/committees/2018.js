@@ -38,8 +38,8 @@ const oneEight = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Aylwin Sim</td>
-                                <td>President</td>
+                                <td>Aylwin Sim </td>
+                                <td>President (Founder)</td>
                             </tr>
                             <tr>
                                 <td>Chong Yong Quan</td>
@@ -59,7 +59,7 @@ const oneEight = () => {
                             </tr>
                             <tr>
                                 <td>Jehovah Yii Zui Hon</td>
-                                <td>Vice Treasurer</td>
+                                <td>Vice Treasurer (Co-Founder)</td>
                             </tr>
                             <tr>
                                 <td>Raymond Sii Li Sheng</td>

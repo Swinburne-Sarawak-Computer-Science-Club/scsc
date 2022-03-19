@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import Head from "next/head";
+import {signOut, useSession} from "next-auth/react"
+import {useRouter} from "next/dist/client/router"
 
 const Nav = () => {
+
+	  const { data: session } = useSession();
+  const router = useRouter();
+
+  console.log("session", session);
   return (
 		<aside className="col-md">
 			<Head>
@@ -108,13 +115,29 @@ const Nav = () => {
 					With <a href="/thanks">thanks</a> to SCSC's alumni and friends
 				</p>
 
-				{/* <p>
-						<a
-							href="/api/auth/signin"
+				{session ? (
+					<p>
+						<a href="/admin/welcome-to-dashboard">Dashbord</a>
+					</p>
+				) : (
+					<p>
+						
+					</p>
+				)}
+
+				<p>
+					{session ? (
+						<button onClick={() => signOut()}> ↪ Log out</button>
+					) : (
+						<button
+							onClick={() => {
+								router.push("/api/auth/signin")
+							}}
 						>
-							Admin<i class="fa fa-sign-in" aria-hidden="true"></i>
-						</a>
-				</p> */}
+							🔑 Sign in
+						</button>
+					)}
+				</p>
 			</nav>
 
 			<footer></footer>

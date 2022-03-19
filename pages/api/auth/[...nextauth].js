@@ -13,11 +13,11 @@ export default NextAuth({
 				},
 				password: {label: "Password", type: "password"},
 			},
-			async authorize(credentials) {
+			authorize: (credentials) => {
 				// database look up
 				if (
-					credentials.username === process.env.USERNAME &&
-					credentials.password === process.env.PASSWORD
+					credentials.username === "admin" &&
+					credentials.password === "admin"
 				) {
 					return {
 						id: 1,
@@ -32,7 +32,7 @@ export default NextAuth({
 		}),
 	],
 	callbacks: {
-		async jwt ({token, user})  {
+		jwt: ({token, user}) => {
 			// first time jwt callback is run, user object is available
 			if (user) {
 				token.id = user.id
@@ -40,15 +40,12 @@ export default NextAuth({
 
 			return token
 		},
-		async session ({session, token})  {
+		session: ({session, token}) => {
 			if (token) {
 				session.id = token.id
 			}
 
 			return session
-		},
-		async redirect(url, baseUrl) {
-			return baseUrl
 		},
 	},
 	secret: process.env.SECRET,
@@ -57,6 +54,6 @@ export default NextAuth({
 		encryption: true,
 	},
 	pages: {
-		signIn: "/admin/welcome-to-dashboard",
+		
 	},
 })

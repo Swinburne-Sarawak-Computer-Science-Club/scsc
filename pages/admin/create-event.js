@@ -144,9 +144,10 @@ const NewEvent = () => {
                                 name='venue'
                                 onChange={handleChange}
                             />
+                            <label>Description</label>
                             <Form.TextArea
                                 fluid
-                                label='Descriprtion'
+                               
                                 placeholder='Description'
                                 name='description'
                                 error={errors.description ? { content: 'Please enter a description', pointing: 'below' } : null}

@@ -35,7 +35,7 @@ const Dashboard = () => {
 							Hi, I am Hovah. <br />
 							Basically this dashboard is just an amateur product. <br />
 							I am lazy to code extra features and I hope that you guys can
-							continue the works. <b />
+							continue the works. <br />
 							Good luck on building the new website with Wordpress.
 						</p>
 
